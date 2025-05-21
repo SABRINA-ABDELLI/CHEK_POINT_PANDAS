@@ -1,0 +1,40 @@
+Nettoyage et transformation des données avec pandas
+
+[33]
+0 s
+import pandas as pd
+data = {'Nom': ['John', 'Mary', 'Bob', 'Sarah', 'Tom', 'Lisa'], 'Service': ['IT', 'Marketing', 'Ventes', 'IT', 'Finances', 'Marketing'], 'Âge': [30, 40, 25, 35, 45, 28], 'Sexe': ['Homme', 'Femme', 'Homme', 'Femme', 'Homme', 'Femme'], 'Salaire': [50000, 60000, 45000, 55000, 70000, 55000], 'Expérience': [3, 7, 2, 5, 10, 4]}
+
+employee_df=pd.DataFrame(data)
+employee_df
+
+
+[4]
+0 s
+#Utilisez la méthode iloc pour sélectionner les 3 premières lignes du dataframe.
+data1 = employee_df.loc[:2]
+data1
+
+
+
+[20]
+#Utilisez la méthode loc pour sélectionner toutes les lignes où le département est « Marketing ».
+
+data2 = employee_df.loc[employee_df["Service"]=="Marketing"]
+data2
+
+
+[32]
+0 s
+#Utilisez la méthode iloc pour sélectionner les colonnes Âge et Sexe pour les 4 premières lignes du dataframe.
+data3 = employee_df.iloc[:4,2:4]
+data3
+
+
+[37]
+0 s
+#Utilisez la méthode loc pour sélectionner les colonnes Salaire et Expérience pour toutes les lignes où le sexe est « Homme ».
+data4 =employee_df.loc[employee_df["Sexe"]=="Homme",["Salaire","Expérience"]]
+data4
+
+
